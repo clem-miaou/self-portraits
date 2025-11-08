@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A SERIE - Self Portraits</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      padding: 20px;
+    }
+    .carousel img {
+      width: 300px;
+      height: auto;
+      border-radius: 5px;
+      scroll-snap-align: center;
+    }
+    video {
+      display: block;
+      margin: 40px auto;
+      max-width: 80%;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>A SERIE</h1>
+  </header>
+  <main>
+    <div class="carousel">
+      <img src="1.jfif" alt="Self portrait 1">
+      <img src="2.jfif" alt="Self portrait 2">
+      <img src="3.jfif" alt="Self portrait 3">
+    </div>
+    <a class="back" href="index.html">← Back to Home</a>
+  </main>
+</body>
+</html>
