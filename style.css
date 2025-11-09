@@ -1,0 +1,73 @@
+/* GLOBAL STYLE */
+body {
+  margin: 0;
+  background-color: #1f1f1f; /* dark grey */
+  color: #e0e0e0;
+  font-family: "Courier New", monospace;
+  letter-spacing: 1px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 40px 0;
+}
+
+h1 {
+  font-weight: normal;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+/* MAIN SECTION */
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* LINKS */
+nav {
+  display: flex;
+  flex-direction: column; /* each link on its own line */
+  align-items: center;
+}
+
+nav a {
+  display: block;
+  margin: 12px 0;
+  text-decoration: none;
+  color: #e0e0e0;
+  font-size: 1.4em;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #9a9a9a;
+  filter: blur(0.4px);
+}
+
+/* PARAGRAPHS */
+main p {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* LINKS TO GO BACK */
+a.back {
+  display: block;
+  text-align: center;
+  margin-top: 40px;
+  color: #9a9a9a;
+  text-decoration: none;
+}
+a.back:hover {
+  color: #fff;
+}
