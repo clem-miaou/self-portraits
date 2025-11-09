@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THIS WAS WEIRD - Self Portraits</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #0b0b0b;
+      color: #bcbcbc;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .gallery img {
+      width: 250px;
+      height: auto;
+      border-radius: 6px;
+      filter: grayscale(60%) brightness(0.8);
+      transition: all 0.3s ease;
+    }
+
+    .gallery img:hover {
+      filter: grayscale(0%) brightness(1);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>why are you here ?...</h1>
+  </header>
+
+  <main>
+    <p>You clicked on this link. Why ?<br>Now you’re here —are you looking for something ? We've all been chasing something in our life.</p>
+
+    <div class="gallery">
+      <img src="9.jpg" alt="???">
+      <img src="12.jpg" alt="???">
+      <img src="15.jpg" alt="???">
+    </div>
+
+    <a class="back" href="index.html">← Back to Home</a>
+  </main>
+</body>
+</html>
