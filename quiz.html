@@ -123,3 +123,124 @@
                       }
                     },
                     "No": { text: "Why are you lying? It's bad.", backHome: true }
+                  }
+                }
+              }
+            },
+            "No": { text: "I know how it feels.", restart: true },
+            "I don't know": {
+              question: "Are you a biological being?",
+              options: {
+                "Yes": {
+                  question: "This is you (scroll down...)\n\nWhat are you looking for?",
+                  options: {
+                    "A meaning in life": { text: "...", color: "#5a0000", restart: true },
+                    "I don't know": { text: "I can’t know for you.", restart: true },
+                    "More": {
+                      question: "Happy?",
+                      options: {
+                        "Yes": { text: "Restart.", restart: true },
+                        "No": {
+                          question: "More?",
+                          options: {
+                            "Yes": { text: "(more pictures)", restart: true },
+                            "No": { text: "Restart.", restart: true }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "No": { text: "Why are you lying? It's bad.", backHome: true }
+              }
+            }
+          }
+        },
+        "No": {
+          question: "Are you God?",
+          options: {
+            "Yes": { text: "No. I am God.", backHome: true },
+            "No": {
+              question: "Are you real?",
+              options: {
+                "Yes": { text: "You don’t belong here.", backHome: true },
+                "No": {
+                  question: "Are you scared?",
+                  options: {
+                    "Yes": {
+                      question: "You don’t have to stay.",
+                      backHome: true
+                    },
+                    "No": { text: "Oh! Well, good for you :)", restart: true },
+                    "Of what ???": {
+                      question: "Are you scared of...",
+                      options: {
+                        "Life ?": { text: "Well then, you are definitely a human being :)", restart: true },
+                        "Humanity ?": { text: "Well then, you are definitely a human being :)", restart: true },
+                        "The Unknown ?": { text: "Well then, you are definitely a human being :)", restart: true },
+                        "Everything ?": { text: "Well then, you are definitely a human being :)", restart: true }
+                      }
+                    }
+                  }
+                },
+                "I don't know": {
+                  question: "Are you scared?",
+                  options: {
+                    "Yes": {
+                      question: "You don’t have to stay.",
+                      backHome: true
+                    },
+                    "No": { text: "Oh! Well, good for you :)", restart: true },
+                    "Of what ???": {
+                      question: "Are you scared of...",
+                      options: {
+                        "Life ?": { text: "Well then, you are definitely a human being :)", restart: true },
+                        "Humanity ?": { text: "Well then, you are definitely a human being :)", restart: true },
+                        "The Unknown ?": { text: "Well then, you are definitely a human being :)", restart: true },
+                        "Everything ?": { text: "Well then, you are definitely a human being :)", restart: true }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    };
+
+    function showQuestion(node) {
+      cEl.innerHTML = "";
+      setBg(node.color || "#0a0a0a");
+      backHome.classList.add("hidden");
+
+      if (node.text) {
+        qEl.textContent = node.text;
+        if (node.restart) {
+          const btn = document.createElement("button");
+          btn.textContent = "Restart";
+          btn.onclick = () => startQuiz();
+          cEl.appendChild(btn);
+        } else if (node.backHome) {
+          backHome.classList.remove("hidden");
+        }
+        return;
+      }
+
+      qEl.textContent = node.question;
+      Object.keys(node.options).forEach(choice => {
+        const btn = document.createElement("button");
+        btn.textContent = choice;
+        btn.onclick = () => showQuestion(node.options[choice]);
+        cEl.appendChild(btn);
+      });
+    }
+
+    function startQuiz() {
+      showQuestion(quiz);
+    }
+
+    startQuiz();
+  </script>
+</body>
+</html>
