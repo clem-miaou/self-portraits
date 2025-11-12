@@ -6,52 +6,156 @@
   <title>A SERIE - Self Portraits</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    body {
+      background-color: #1f1f1f;
+      color: #e0e0e0;
+      font-family: "Courier New", monospace;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      padding: 40px 0 20px 0;
+    }
+
+    h1 {
+      font-weight: normal;
+      letter-spacing: 3px;
+      margin: 0;
+    }
+
+    /* --- Carousel horizontal (style site d'achat) --- */
     .carousel {
       display: flex;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       gap: 20px;
-      padding: 20px;
+      padding: 10px 20px 25px 20px;
+      scrollbar-color: #666 #222;
+      scrollbar-width: thin;
     }
+
+    .carousel::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .carousel::-webkit-scrollbar-thumb {
+      background: #666;
+      border-radius: 4px;
+    }
+
+    .carousel::-webkit-scrollbar-track {
+      background: #222;
+    }
+
+    .carousel figure {
+      flex: 0 0 auto;
+      width: 250px;
+      scroll-snap-align: start;
+      text-align: center;
+      color: #aaa;
+    }
+
     .carousel img {
-      width: 300px;
+      width: 100%;
       height: auto;
-      border-radius: 5px;
-      scroll-snap-align: center;
-    }
-    video {
-      display: block;
-      margin: 40px auto;
-      max-width: 80%;
       border-radius: 8px;
+      filter: grayscale(60%) brightness(0.8);
+      transition: all 0.3s ease;
+    }
+
+    .carousel img:hover {
+      filter: grayscale(0%) brightness(1);
+      transform: scale(1.05);
+    }
+
+    .carousel figcaption {
+      margin-top: 8px;
+      font-size: 0.85em;
+      color: #888;
+      font-style: italic;
+    }
+
+    a.back {
+      display: inline-block;
+      margin: 50px 0 40px 0;
+      color: #9a9a9a;
+      text-decoration: none;
+      border: 1px solid #9a9a9a;
+      padding: 8px 16px;
+      transition: 0.3s;
+    }
+
+    a.back:hover {
+      background-color: #9a9a9a;
+      color: #1f1f1f;
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>A SERIE</h1>
+    <p>Explore the fragments of the self — 49 portraits.</p>
   </header>
+
   <main>
-   <div class="carousel">
-  <figure>
-    <img src="1.png" alt="Self portrait 1">
-    <figcaption>24/09 BEAUX-ARTS</figcaption>
-  </figure>
+    <div class="carousel">
+      <!-- 49 images -->
+      <!-- tu peux changer les légendes si tu veux -->
+      <figure><img src="1.png" alt="Self Portrait 1"><figcaption>Self Portrait 1</figcaption></figure>
+      <figure><img src="2.png" alt="Self Portrait 2"><figcaption>Self Portrait 2</figcaption></figure>
+      <figure><img src="3.png" alt="Self Portrait 3"><figcaption>Self Portrait 3</figcaption></figure>
+      <figure><img src="4.png" alt="Self Portrait 4"><figcaption>Self Portrait 4</figcaption></figure>
+      <figure><img src="5.png" alt="Self Portrait 5"><figcaption>Self Portrait 5</figcaption></figure>
+      <figure><img src="6.png" alt="Self Portrait 6"><figcaption>Self Portrait 6</figcaption></figure>
+      <figure><img src="7.png" alt="Self Portrait 7"><figcaption>Self Portrait 7</figcaption></figure>
+      <figure><img src="8.png" alt="Self Portrait 8"><figcaption>Self Portrait 8</figcaption></figure>
+      <figure><img src="9.png" alt="Self Portrait 9"><figcaption>Self Portrait 9</figcaption></figure>
+      <figure><img src="10.png" alt="Self Portrait 10"><figcaption>Self Portrait 10</figcaption></figure>
+      <figure><img src="11.png" alt="Self Portrait 11"><figcaption>Self Portrait 11</figcaption></figure>
+      <figure><img src="12.png" alt="Self Portrait 12"><figcaption>Self Portrait 12</figcaption></figure>
+      <figure><img src="13.png" alt="Self Portrait 13"><figcaption>Self Portrait 13</figcaption></figure>
+      <figure><img src="14.png" alt="Self Portrait 14"><figcaption>Self Portrait 14</figcaption></figure>
+      <figure><img src="15.png" alt="Self Portrait 15"><figcaption>Self Portrait 15</figcaption></figure>
+      <figure><img src="16.png" alt="Self Portrait 16"><figcaption>Self Portrait 16</figcaption></figure>
+      <figure><img src="17.png" alt="Self Portrait 17"><figcaption>Self Portrait 17</figcaption></figure>
+      <figure><img src="18.png" alt="Self Portrait 18"><figcaption>Self Portrait 18</figcaption></figure>
+      <figure><img src="19.png" alt="Self Portrait 19"><figcaption>Self Portrait 19</figcaption></figure>
+      <figure><img src="20.png" alt="Self Portrait 20"><figcaption>Self Portrait 20</figcaption></figure>
+      <figure><img src="21.png" alt="Self Portrait 21"><figcaption>Self Portrait 21</figcaption></figure>
+      <figure><img src="22.png" alt="Self Portrait 22"><figcaption>Self Portrait 22</figcaption></figure>
+      <figure><img src="23.png" alt="Self Portrait 23"><figcaption>Self Portrait 23</figcaption></figure>
+      <figure><img src="24.png" alt="Self Portrait 24"><figcaption>Self Portrait 24</figcaption></figure>
+      <figure><img src="25.png" alt="Self Portrait 25"><figcaption>Self Portrait 25</figcaption></figure>
+      <figure><img src="26.png" alt="Self Portrait 26"><figcaption>Self Portrait 26</figcaption></figure>
+      <figure><img src="27.png" alt="Self Portrait 27"><figcaption>Self Portrait 27</figcaption></figure>
+      <figure><img src="28.png" alt="Self Portrait 28"><figcaption>Self Portrait 28</figcaption></figure>
+      <figure><img src="29.png" alt="Self Portrait 29"><figcaption>Self Portrait 29</figcaption></figure>
+      <figure><img src="30.png" alt="Self Portrait 30"><figcaption>Self Portrait 30</figcaption></figure>
+      <figure><img src="31.png" alt="Self Portrait 31"><figcaption>Self Portrait 31</figcaption></figure>
+      <figure><img src="32.png" alt="Self Portrait 32"><figcaption>Self Portrait 32</figcaption></figure>
+      <figure><img src="33.png" alt="Self Portrait 33"><figcaption>Self Portrait 33</figcaption></figure>
+      <figure><img src="34.png" alt="Self Portrait 34"><figcaption>Self Portrait 34</figcaption></figure>
+      <figure><img src="35.png" alt="Self Portrait 35"><figcaption>Self Portrait 35</figcaption></figure>
+      <figure><img src="36.png" alt="Self Portrait 36"><figcaption>Self Portrait 36</figcaption></figure>
+      <figure><img src="37.png" alt="Self Portrait 37"><figcaption>Self Portrait 37</figcaption></figure>
+      <figure><img src="38.png" alt="Self Portrait 38"><figcaption>Self Portrait 38</figcaption></figure>
+      <figure><img src="39.png" alt="Self Portrait 39"><figcaption>Self Portrait 39</figcaption></figure>
+      <figure><img src="40.png" alt="Self Portrait 40"><figcaption>Self Portrait 40</figcaption></figure>
+      <figure><img src="41.png" alt="Self Portrait 41"><figcaption>Self Portrait 41</figcaption></figure>
+      <figure><img src="42.png" alt="Self Portrait 42"><figcaption>Self Portrait 42</figcaption></figure>
+      <figure><img src="43.png" alt="Self Portrait 43"><figcaption>Self Portrait 43</figcaption></figure>
+      <figure><img src="44.png" alt="Self Portrait 44"><figcaption>Self Portrait 44</figcaption></figure>
+      <figure><img src="45.png" alt="Self Portrait 45"><figcaption>Self Portrait 45</figcaption></figure>
+      <figure><img src="46.png" alt="Self Portrait 46"><figcaption>Self Portrait 46</figcaption></figure>
+      <figure><img src="47.png" alt="Self Portrait 47"><figcaption>Self Portrait 47</figcaption></figure>
+      <figure><img src="48.png" alt="Self Portrait 48"><figcaption>Self Portrait 48</figcaption></figure>
+      <figure><img src="49.png" alt="Self Portrait 49"><figcaption>Self Portrait 49</figcaption></figure>
+    </div>
 
-  <figure>
-    <img src="2.png" alt="Self portrait 2">
-    <figcaption>25/09</figcaption>
-  </figure>
-
-  <figure>
-    <img src="3.png" alt="Self portrait 3">
-    <figcaption>26/09</figcaption>
-  </figure>
-</div>
-    <a class="back" href="index.html">← Back to Home</a>
+    <a href="index.html" class="back">← Back to Home</a>
   </main>
 </body>
 </html>
-
-
-
