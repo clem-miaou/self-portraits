@@ -88,21 +88,38 @@ a.back:hover {
   filter: blur(0.3px);
 }
 
-/* --- Horizontal scrolling carousel --- */
+/* --- Carousel horizontal (style site d'achat) --- */
 .carousel {
   display: flex;
-  overflow-x: auto;         
+  overflow-x: auto;            
   scroll-snap-type: x mandatory;
   gap: 20px;
-  padding: 20px;
-  justify-content: flex-start;
-  align-items: center;
+  padding: 10px 20px 25px 20px;
+  scrollbar-color: #666 #222;   
+  scrollbar-width: thin;
+}
+
+.carousel::-webkit-scrollbar {
+  height: 8px;                 
+}
+.carousel::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 4px;
+}
+.carousel::-webkit-scrollbar-track {
+  background: #222;
+}
+
+.carousel figure {
+  flex: 0 0 auto;
+  width: 250px;                 
+  scroll-snap-align: start;
+  text-align: center;
+  color: #aaa;
 }
 
 .carousel img {
-  scroll-snap-align: center;
-  flex: 0 0 auto;
-  width: 250px;
+  width: 100%;
   height: auto;
   border-radius: 8px;
   filter: grayscale(60%) brightness(0.8);
@@ -112,4 +129,11 @@ a.back:hover {
 .carousel img:hover {
   filter: grayscale(0%) brightness(1);
   transform: scale(1.05);
+}
+
+.carousel figcaption {
+  margin-top: 8px;
+  font-size: 0.85em;
+  color: #888;
+  font-style: italic;
 }
