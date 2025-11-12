@@ -87,3 +87,27 @@ a.back:hover {
   color: #ffffff;
   filter: blur(0.3px);
 }
+
+/* --- Horizontal scrolling gallery --- */
+.gallery {
+  display: flex;
+  overflow-x: auto;          /* active le scroll horizontal */
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 20px;
+}
+
+.gallery img {
+  scroll-snap-align: center;
+  flex: 0 0 auto;
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  filter: grayscale(60%) brightness(0.8);
+}
+
+.gallery img:hover {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.05);
+}
