@@ -25,13 +25,21 @@
       margin: 0;
     }
 
-    /* --- Carousel horizontal (style site d'achat) --- */
+    /* --- Carousel container --- */
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* --- Carousel horizontal --- */
     .carousel {
       display: flex;
       overflow-x: auto;
+      scroll-behavior: smooth;
       scroll-snap-type: x mandatory;
       gap: 20px;
-      padding: 10px 20px 25px 20px;
+      padding: 20px;
       scrollbar-color: #666 #222;
       scrollbar-width: thin;
     }
@@ -39,12 +47,10 @@
     .carousel::-webkit-scrollbar {
       height: 8px;
     }
-
     .carousel::-webkit-scrollbar-thumb {
       background: #666;
       border-radius: 4px;
     }
-
     .carousel::-webkit-scrollbar-track {
       background: #222;
     }
@@ -52,7 +58,7 @@
     .carousel figure {
       flex: 0 0 auto;
       width: 250px;
-      scroll-snap-align: start;
+      scroll-snap-align: center;
       text-align: center;
       color: #aaa;
     }
@@ -77,9 +83,39 @@
       font-style: italic;
     }
 
+    /* --- Arrows --- */
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid #888;
+      color: #e0e0e0;
+      font-size: 2em;
+      padding: 5px 12px;
+      cursor: pointer;
+      z-index: 2;
+      transition: 0.3s;
+      user-select: none;
+    }
+
+    .arrow:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #fff;
+    }
+
+    .arrow.left {
+      left: 10px;
+    }
+
+    .arrow.right {
+      right: 10px;
+    }
+
+    /* --- Back to home --- */
     a.back {
       display: inline-block;
-      margin: 50px 0 40px 0;
+      margin: 40px 0 60px 0;
       color: #9a9a9a;
       text-decoration: none;
       border: 1px solid #9a9a9a;
@@ -101,10 +137,10 @@
   </header>
 
   <main>
-    <div class="carousel">
-      <!-- 49 images -->
-      <!-- tu peux changer les légendes si tu veux -->
-      <figure><img src="1.png" alt="Self Portrait 1"><figcaption>Self Portrait 1</figcaption></figure>
+    <div class="carousel-container">
+      <span class="arrow left" id="prev">&#10094;</span>
+      <div class="carousel" id="carousel">
+       <figure><img src="1.png" alt="Self Portrait 1"><figcaption>Self Portrait 1</figcaption></figure>
       <figure><img src="2.png" alt="Self Portrait 2"><figcaption>Self Portrait 2</figcaption></figure>
       <figure><img src="3.png" alt="Self Portrait 3"><figcaption>Self Portrait 3</figcaption></figure>
       <figure><img src="4.png" alt="Self Portrait 4"><figcaption>Self Portrait 4</figcaption></figure>
@@ -153,9 +189,49 @@
       <figure><img src="47.png" alt="Self Portrait 47"><figcaption>Self Portrait 47</figcaption></figure>
       <figure><img src="48.png" alt="Self Portrait 48"><figcaption>Self Portrait 48</figcaption></figure>
       <figure><img src="49.png" alt="Self Portrait 49"><figcaption>Self Portrait 49</figcaption></figure>
+        ${Array.from({length: 49}, (_, i) => `
+          <figure>
+            <img src="${i+1}.png" alt="Self Portrait ${i+1}">
+            <figcaption>Self Portrait ${i+1}</figcaption>
+          </figure>
+        `).join('')}
+      </div>
+      <span class="arrow right" id="next">&#10095;</span>
     </div>
 
     <a href="index.html" class="back">← Back to Home</a>
   </main>
+
+  <script>
+    // Inject images dynamically (49 total)
+    document.addEventListener('DOMContentLoaded', () => {
+      const carousel = document.getElementById('carousel');
+      let html = '';
+      for (let i = 1; i <= 49; i++) {
+        html += `
+          <figure>
+            <img src="${i}.png" alt="Self Portrait ${i}">
+            <figcaption>Self Portrait ${i}</figcaption>
+          </figure>
+        `;
+      }
+      carousel.innerHTML = html;
+    });
+
+    // Navigation arrows
+    const carousel = document.getElementById('carousel');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
+
+    prev.addEventListener('click', () => {
+      carousel.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    next.addEventListener('click', () => {
+      carousel.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
+
+
