@@ -169,20 +169,11 @@ a.back:hover {
     background-color: #fff;
 }
 
-/* Page Weird */
-body.weird {
-    background-image: url('eyes.png');
-    background-size: cover;     
-    background-position: center;
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
+html.weird, body.weird { background: none; }
+html.weird {
+  background: url('eyes.png') center/cover no-repeat fixed;
+}
+html.quiz {
+  background: url('AUGHH.png') center/cover no-repeat fixed;
 }
 
-/* Page Quiz */
-body.quiz {
-    background-image: url('AUGHH.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
