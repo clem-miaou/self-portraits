@@ -1,12 +1,19 @@
 <!DOCTYPE html>
-<html class="weird" lang="en">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>THIS WAS WEIRD - Self Portraits</title>
   <link rel="stylesheet" href="style.css">
-  <sytle>
-     .gallery {
+  <style>
+    body {
+      background-color: #0b0b0b;
+      color: #bcbcbc;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -21,17 +28,21 @@
       filter: grayscale(60%) brightness(0.8);
       transition: all 0.3s ease;
     }
-  </sytle>
+
+    .gallery img:hover {
+      filter: grayscale(0%) brightness(1);
+      transform: scale(1.05);
+    }
+  </style>
 </head>
-<body>
+<body calss="weird">
+<body class="weird">
   <header>
     <h1>why are you here ?...</h1>
   </header>
 
   <main>
-    <p>You clicked on this link. Why?<br>
-    Now you’re here — are you looking for something?<br>
-    We've all been chasing something in our life.</p>
+    <p>You clicked on this link. Why ?<br>Now you’re here —are you looking for something ? We've all been chasing something in our life.</p>
 
     <div class="gallery">
       <a href="quiz.html"><img src="9.jpg" alt="???"></a>
@@ -43,8 +54,3 @@
   </main>
 </body>
 </html>
-
-
-
-
-
