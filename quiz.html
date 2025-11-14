@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html class="quiz" lang="en">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Are you a human being?</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     body {
+      background-color: #0a0a0a;
+      color: #d6d6d6;
       font-family: 'Courier New', monospace;
       text-align: center;
       padding: 60px 20px;
@@ -53,7 +54,6 @@
     }
   </style>
 </head>
-
 <body>
   <div id="quiz">
     <div class="question" id="question"></div>
@@ -78,48 +78,7 @@
           options: {
             "Yes": {
               question: "Did you experience childhood?",
-              options: {
-                "Yes": {
-                  question: "To be a kid again...",
-                  options: {
-                    "I miss it": {
-                      question: "We need to let go",
-                      options: {
-                        "Yes": { text: ":’)", restart: true },
-                        "No": { text: "You don’t really have a choice", backHome: true }
-                      }
-                    },
-                    "I hate it": {
-                      question: "We need to let go",
-                      options: {
-                        "Yes": { text: ":’)", restart: true },
-                        "No": { text: "You don’t really have a choice", backHome: true }
-                      }
-                    }
-                  }
-                },
-                "No": { text: "Why are you lying? It's bad.", backHome: true },
-                "I don't know": {
-                  question: "Are you a biological being?",
-                  options: {
-                    "Yes": {
-                      question: "This is you (scroll down...)\n\nWhat are you looking for?",
-                      options: {
-                        "A meaning in life": { text: "...", color: "#5a0000", restart: true },
-                        "I don't know": { text: "I can’t know for you.", restart: true },
-                        "More": {
-                          question: "Happy?",
-                          options: {
-                            "Yes": { text: "Restart.", restart: true },
-                            "No": {
-                              question: "More?",
-                              options: {
-                                "Yes": { text: "(more pictures)", restart: true },
-                                "No": { text: "Restart.", restart: true }
-                              }
-                            }
-                          }
-                        }
+@@ -123,3 +123,124 @@
                       }
                     },
                     "No": { text: "Why are you lying? It's bad.", backHome: true }
@@ -244,4 +203,5 @@
   </script>
 </body>
 </html>
+
 
