@@ -169,11 +169,12 @@ a.back:hover {
     background-color: #fff;
 }
 
-html.weird, body.weird { background: none; }
 html.weird {
   background: url('eyes.png') center/cover no-repeat fixed;
 }
+
 html.quiz {
   background: url('AUGHH.png') center/cover no-repeat fixed;
 }
+
 
